@@ -1,5 +1,5 @@
-import { IUser, Role } from "../modules/user/user.interface"
-import { User } from "../modules/user/user.model"
+import { IUser, Role } from "../modules/admin/admin.interface"
+import { User } from "../modules/admin/admin.model"
 import bcryptjs from "bcryptjs"
 
 export const seedSuperAdmin = async () => {
