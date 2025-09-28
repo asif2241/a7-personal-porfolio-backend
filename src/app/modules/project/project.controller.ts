@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { catchAsync } from "../../utils/catchAsync";
 import { ProjectsServices } from "./project.services";
 import { sendResponse } from "../../utils/sendResponse";
+import { success } from "zod";
 
 const createProject = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const project = await ProjectsServices.createProject(req.body);
@@ -29,7 +30,32 @@ const updateProject = catchAsync(async (req: Request, res: Response, next: NextF
     })
 })
 
+const getAllProjects = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const result = await ProjectsServices.getAllProjects()
+
+    sendResponse(res, {
+        success: true,
+        statusCode: 200,
+        message: "All Projects Retrive Successfully!",
+        data: result.data,
+        meta: result.meta
+    })
+})
+
+const deleteProject = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const id = req.params.id;
+    const deletedProject = await ProjectsServices.deleteProject(id)
+
+    sendResponse(res, {
+        success: true,
+        statusCode: 200,
+        message: "Project Deleted Successfullly",
+        data: deletedProject
+    })
+})
 export const ProjectControllers = {
     createProject,
-    updateProject
+    updateProject,
+    getAllProjects,
+    deleteProject
 }

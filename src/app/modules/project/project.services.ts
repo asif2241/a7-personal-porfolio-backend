@@ -24,8 +24,15 @@ const getAllProjects = async () => {
         }
     }
 }
+
+const deleteProject = async (id: string) => {
+    const deletedProject = await Projects.findByIdAndDelete(id);
+    return deletedProject
+}
+
 export const ProjectsServices = {
     createProject,
     updateProject,
-    getAllProjects
+    getAllProjects,
+    deleteProject
 }
