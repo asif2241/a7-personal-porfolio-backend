@@ -7,13 +7,12 @@ export const creatBlogZodSchema = z.object({
         error: "Not a string"
     })
         .min(5, { error: "TItle must be at least 6 characters long!" })
-        .max(50, { error: "Title cannot exceed 50 characters!" }),
+        .max(60, { error: "Title cannot exceed 60 characters!" }),
     //content
     content: z.string({
         error: "Content must be string!"
     })
-        .min(10, { error: "Description must be at least 10 characters long!" })
-        .max(150, { error: "Description cannot exceed 150 characters!" }),
+        .min(50, { error: "content must be at least 50 characters long!" }),
     //thumbnail
     thumbnail: z.string({
         error: "Thumbnail must be string!"
@@ -28,14 +27,13 @@ export const UpdareBlogZodSchema = z.object({
         error: "Not a string"
     })
         .min(5, { error: "TItle must be at least 6 characters long!" })
-        .max(50, { error: "Title cannot exceed 50 characters!" }).optional(),
+        .max(60, { error: "Title cannot exceed 60 characters!" }).optional(),
 
     //conent
     content: z.string({
         error: "Content must be string!"
     })
-        .min(10, { error: "Description must be at least 10 characters long!" })
-        .max(150, { error: "Description cannot exceed 150 characters!" })
+        .min(50, { error: "content must be at least 10 characters long!" })
         .optional(),
 
     // thumbnail
