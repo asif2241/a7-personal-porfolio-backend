@@ -21,61 +21,34 @@
 - **Password Hashing**: Bcyptjs
 - **Others**: TypeScript, Dotenv, ESLint, Postman, Cors, Cookie-parser
 
-## **FOLDER STRUCTURE:**
+### 🔐 **ADMIN LOGIN Related API**
 
-.
-├── .env
-├── .gitignore
-├── .eslintrc.cjs
-├── package.json
-├── package-lock.json
-├── README.md
-├── tsconfig.json
-└── src
-├── app
-│ ├── errorHelpers
-│ │ ├── AppError.ts
-│ │ ├── handleCastError.ts
-│ │ ├── handleDuplicateError.ts
-│ │ ├── handleValidationError.ts
-│ │ └── handleZodError.ts
-│ ├── interfaces
-│ │ ├── error.types.ts
-│ │ └── index.d.ts
-│ ├── middlewares
-│ │ ├── checkAuth.ts
-│ │ ├── globalErrorHandler.ts
-│ │ ├── notFound.ts
-│ │ └── validateRequest.ts
-│ ├── modules
-│ │ ├── admin
-│ │ │ ├── admin.controller.ts
-│ │ │ ├── admin.interface.ts
-│ │ │ ├── admin.model.ts
-│ │ │ ├── admin.route.ts
-│ │ │ └── admin.service.ts
-│ │ ├── blogs
-│ │ │ ├── blogs.constant.ts
-│ │ │ ├── blogs.controller.ts
-│ │ │ ├── blogs.interface.ts
-│ │ │ ├── blogs.model.ts
-│ │ │ ├── blogs.routes.ts
-│ │ │ ├── blogs.service.ts
-│ │ │ └── blogs.validation.ts
-│ │ └── project
-│ │ ├── project.controller.ts
-│ │ ├── project.interface.ts
-│ │ ├── project.model.ts
-│ │ ├── project.route.ts
-│ │ ├── project.service.ts
-│ │ └── project.validation.ts
-│ └── routes
-│ └── index.ts
-├── server.ts
-└── utils
-├── catchAsync.ts
-├── generateSlug.ts
-├── jwt.ts
-├── seedSuperAdmin.ts
-├── sendResponse.ts
-└── setCookie.ts
+| **Method** | **Endpoints**  | **Uses**                                     | **Access**                      |
+| ---------- | -------------- | -------------------------------------------- | ------------------------------- |
+| _POST_     | /login         | For Admin Login                              | Public (with admin credentials) |
+| _POST_     | /refresh-token | Create a new Access Token With Refresh Token | ADMIN                           |
+
+---
+
+### 🔐 **Project Showcase Related API**
+
+| **Method** | **Endpoints**                | **Uses**                         | **Access** |
+| ---------- | ---------------------------- | -------------------------------- | ---------- |
+| _POST_     | /projects/add-project        | For Adding a New Project into DB | ADMIN      |
+| _PATCH_    | /projects/update-project/:id | Update a Existing Project        | ADMIN      |
+| _GET_      | /projects                    | Retrives All Projects from DB    | public     |
+| _DELETE_   | /projects/delete/:id         | Delete a Projects for DB         | ADMIN      |
+
+---
+
+### 🔐 **Blogs Related API**
+
+| **Method** | **Endpoints**      | **Uses**                        | **Access** |
+| ---------- | ------------------ | ------------------------------- | ---------- |
+| _POST_     | /blogs/create-blog | For Adding a New Blog           | ADMIN      |
+| _PATCH_    | /blogs/update/:id  | Update a Existing Blog          | ADMIN      |
+| _GET_      | /blogs             | Retrives All Blogs for DB       | public     |
+| _GET_      | /blogs/:slug       | Retrives a Blog by slug from DB | public     |
+| _DELETE_   | /blogs/:id         | Delete a Blog from DB           | ADMIN      |
+
+---
