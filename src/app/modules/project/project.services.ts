@@ -11,6 +11,11 @@ const updateProject = async (id: string, payload: Partial<IProject>) => {
     return updatedProject
 }
 
+const getSingleProject = async (id: string) => {
+    const project = await Projects.findById(id);
+
+    return project
+}
 
 const getAllProjects = async () => {
     const allProjects = await Projects.find({});
@@ -34,5 +39,6 @@ export const ProjectsServices = {
     createProject,
     updateProject,
     getAllProjects,
-    deleteProject
+    deleteProject,
+    getSingleProject
 }

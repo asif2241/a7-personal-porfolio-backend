@@ -23,32 +23,37 @@
 
 ### 🔐 **ADMIN LOGIN Related API**
 
-| **Method** | **Endpoints**  | **Uses**                                     | **Access**                      |
-| ---------- | -------------- | -------------------------------------------- | ------------------------------- |
-| _POST_     | /login         | For Admin Login                              | Public (with admin credentials) |
-| _POST_     | /refresh-token | Create a new Access Token With Refresh Token | ADMIN                           |
+| **Method** | **Endpoints**        | **Uses**                                     | **Access**                      |
+| ---------- | -------------------- | -------------------------------------------- | ------------------------------- |
+| _POST_     | api/v1/login         | For Admin Login                              | Public (with admin credentials) |
+| _POST_     | api/v1/refresh-token | Create a new Access Token With Refresh Token | ADMIN                           |
 
 ---
 
 ### 🔐 **Project Showcase Related API**
 
-| **Method** | **Endpoints**                | **Uses**                         | **Access** |
-| ---------- | ---------------------------- | -------------------------------- | ---------- |
-| _POST_     | /projects/add-project        | For Adding a New Project into DB | ADMIN      |
-| _PATCH_    | /projects/update-project/:id | Update a Existing Project        | ADMIN      |
-| _GET_      | /projects                    | Retrives All Projects from DB    | public     |
-| _DELETE_   | /projects/delete/:id         | Delete a Projects for DB         | ADMIN      |
+| **Method** | **Endpoints**                      | **Uses**                         | **Access** |
+| ---------- | ---------------------------------- | -------------------------------- | ---------- |
+| _POST_     | api/v1/projects/add-project        | For Adding a New Project into DB | ADMIN      |
+| _PATCH_    | api/v1/projects/update-project/:id | Update a Existing Project        | ADMIN      |
+| _GET_      | api/v1/projects                    | Retrieves All Projects from DB   | public     |
+| _GET_      | api/v1/projects/:id                | Retrieves Single Project from DB | public     |
+| _DELETE_   | api/v1/projects/delete/:id         | Delete a Projects for DB         | ADMIN      |
 
 ---
 
 ### 🔐 **Blogs Related API**
 
-| **Method** | **Endpoints**      | **Uses**                        | **Access** |
-| ---------- | ------------------ | ------------------------------- | ---------- |
-| _POST_     | /blogs/create-blog | For Adding a New Blog           | ADMIN      |
-| _PATCH_    | /blogs/update/:id  | Update a Existing Blog          | ADMIN      |
-| _GET_      | /blogs             | Retrives All Blogs for DB       | public     |
-| _GET_      | /blogs/:slug       | Retrives a Blog by slug from DB | public     |
-| _DELETE_   | /blogs/:id         | Delete a Blog from DB           | ADMIN      |
+| **Method** | **Endpoints**            | **Uses**                         | **Access** |
+| ---------- | ------------------------ | -------------------------------- | ---------- |
+| _POST_     | api/v1/blogs/create-blog | For Adding a New Blog            | ADMIN      |
+| _PATCH_    | api/v1/blogs/update/:id  | Update a Existing Blog           | ADMIN      |
+| _GET_      | api/v1/blogs             | Retrieves All Blogs for DB       | public     |
+| _GET_      | api/v1/blogs/:slug       | Retrieves a Blog by slug from DB | public     |
+| _DELETE_   | api/v1/blogs/:id         | Delete a Blog from DB            | ADMIN      |
 
 ---
+
+<!-- ### [ CLICK HERE TO OPEN THE LIVE LINK](https://b5-a7-personal-portfolio-backend-40wd4sg0d-asif2241s-projects.vercel.app/) -->
+
+### LIVE LINK : https://b5-a7-personal-portfolio-backend-40wd4sg0d-asif2241s-projects.vercel.app/

@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { catchAsync } from "../../utils/catchAsync";
 import { ProjectsServices } from "./project.services";
 import { sendResponse } from "../../utils/sendResponse";
-import { success } from "zod";
+
 
 const createProject = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const project = await ProjectsServices.createProject(req.body);
@@ -53,9 +53,25 @@ const deleteProject = catchAsync(async (req: Request, res: Response, next: NextF
         data: deletedProject
     })
 })
+
+const getSingleProject = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const id = req.params.id;
+
+    const project = await ProjectsServices.getSingleProject(id)
+
+    sendResponse(res, {
+        success: true,
+        statusCode: 200,
+        message: "Project retrieve successfully!",
+        data: project
+    })
+})
+
+
 export const ProjectControllers = {
     createProject,
     updateProject,
     getAllProjects,
-    deleteProject
+    deleteProject,
+    getSingleProject
 }
