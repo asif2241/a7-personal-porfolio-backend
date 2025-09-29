@@ -4,5 +4,6 @@ export interface IBlog {
     content: string,
     thumbnail?: string,
     tags: string[],
-    author?: string
+    author?: string,
+    views: number,
 }

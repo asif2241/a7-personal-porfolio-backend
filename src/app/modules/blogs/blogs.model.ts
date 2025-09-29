@@ -7,7 +7,11 @@ const blogSchema = new Schema<IBlog>({
     content: { type: String, required: true },
     thumbnail: { type: String, required: true },
     tags: { type: [String], required: true },
-    author: { type: String }
+    author: { type: String },
+    views: {
+        type: Number,
+        default: 0
+    }
 }, {
     timestamps: true,
     versionKey: false
