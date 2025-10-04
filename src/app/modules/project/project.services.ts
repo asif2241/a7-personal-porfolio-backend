@@ -13,7 +13,9 @@ const updateProject = async (id: string, payload: Partial<IProject>) => {
 
 const getSingleProject = async (id: string) => {
     const project = await Projects.findById(id);
-
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    project!.views += 1
+    await project?.save()
     return project
 }
 

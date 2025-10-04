@@ -8,7 +8,8 @@ export const createProjectZodSchema = z.object({
 
     thumbnail: z.string({ error: "Title must be String" }),
 
-    projectUrl: z.string({ error: "projectUrl must be String" }),
+    backendCodeLink: z.string({ error: "beckendCodeLink must be String" }).optional(),
+    frontendCodeLink: z.string({ error: "beckendCodeLink must be String" }).optional(),
 
     liveLink: z.string({ error: "liveLink must be String" }).optional(),
 
@@ -29,7 +30,8 @@ export const updateProjectZodSchema = z.object({
 
     thumbnail: z.string({ error: "Title must be String" }).optional(),
 
-    projectUrl: z.string({ error: "projectUrl must be String" }).optional(),
+    backendCodeLink: z.string({ error: "beckendCodeLink must be String" }).optional(),
+    frontendCodeLink: z.string({ error: "beckendCodeLink must be String" }).optional(),
 
     liveLink: z.string({ error: "liveLink must be String" }).optional(),
 

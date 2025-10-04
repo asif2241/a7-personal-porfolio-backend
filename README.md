@@ -56,4 +56,4 @@
 
 <!-- ### [ CLICK HERE TO OPEN THE LIVE LINK](https://b5-a7-personal-portfolio-backend-40wd4sg0d-asif2241s-projects.vercel.app/) -->
 
-### LIVE LINK : https://b5-a7-personal-portfolio-backend-40wd4sg0d-asif2241s-projects.vercel.app/
+### LIVE LINK : https://b5-a7-personal-portfolio-backend-qmc6go1w9-asif2241s-projects.vercel.app/

@@ -21,9 +21,11 @@ const projectSchema = new Schema<IProject>({
         type: String,
         required: true
     },
-    projectUrl: {
+    backendCodeLink: {
         type: String,
-        required: true
+    },
+    frontendCodeLink: {
+        type: String,
     },
     liveLink: {
         type: String
@@ -39,6 +41,10 @@ const projectSchema = new Schema<IProject>({
     features: {
         type: [String],
         required: true
+    },
+    views: {
+        type: Number,
+        default: 0
     }
 }, {
     timestamps: true,
